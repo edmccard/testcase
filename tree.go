@@ -31,3 +31,7 @@ func (t Tree) Run(name string, init Testable) bool {
 	}
 	return true
 }
+
+func NewTree(t *testing.T, name string, branches ...Branch) Tree {
+	return Tree{name, t, branches, nil}
+}
