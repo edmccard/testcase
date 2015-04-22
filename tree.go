@@ -19,9 +19,7 @@ func (t Tree) Run(name string, init, exp Testable) bool {
 	if len(t.Branches) == 0 {
 		if !exp.Equals(init) {
 			diff := exp.Diff(init)
-			if diff != nil {
-				t.T.Errorf("%s %s: %s", t.Name, name, diff)
-			}
+			t.T.Errorf("%s %s: %s", t.Name, name, diff)
 			return false
 		}
 	} else {
